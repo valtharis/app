@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
+Route::get('/category', array('as' => 'category', 'uses' => 'CategoryController@index'));
+Route::get('/category/{id}', array('as' => 'category.get', 'uses' => 'CategoryController@get'));
